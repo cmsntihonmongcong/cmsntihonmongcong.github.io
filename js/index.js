@@ -271,36 +271,8 @@ window.onload = function () {
         if (step === 4) {
             reveal();
 
-            function mobox() {
-                function $(id) {
-                    return document.getElementById(id);
-                }
 
-                var card = $('card'),
-                    openB = $('open'),
-                    closeB = $('close'),
-                    timer = null;
-                console.log('wat', card);
-                openB.addEventListener('click', function () {
-                    card.setAttribute('class', 'open-half');
-                    if (timer) clearTimeout(timer);
-                    timer = setTimeout(function () {
-                        card.setAttribute('class', 'open-fully');
-                        timer = null;
-                    }, 1000);
-                });
-
-                closeB.addEventListener('click', function () {
-                    card.setAttribute('class', 'close-half');
-                    if (timer) clearTimerout(timer);
-                    timer = setTimeout(function () {
-                        card.setAttribute('class', '');
-                        timer = null;
-                    }, 1000);
-                });
-
-            };
-            mobox();
+            openCard();
             return;
         }
         setTimeout(openBox, stepMinutes[step - 1]);
@@ -323,6 +295,9 @@ function reveal() {
         w = 255; h = 155;
     }
 
+    document.getElementById("card-container").style.visibility = "visible";
+    document.getElementById("card-container").style.width = "960px";
+    document.getElementById("card-container").style.height = "480px";
     // var ifrm = document.createElement("iframe");
     // ifrm.setAttribute("src", "https://www.youtube.com/embed/gbICivOO26U?controls=0&loop=1&autoplay=1");
     // //ifrm.style.width = `${w}px`;
@@ -330,40 +305,66 @@ function reveal() {
     // ifrm.style.border = 'none';
     // document.querySelector('#video').appendChild(ifrm);
 
-    var thiep = document.createElement("div");
-    thiep.innerHTML = "<div id='card'>" +
-        "<div id='card-inside'>" +
-        "<div class='wrap'>" +
-        "   <p>Hey,</p>" +
-        "  <p>“A wish for you on your birthday, whatever you ask may you receive, whatever you seek may you find, whatever you wish may it be fulfilled on your birthday and always. Happy birthday!</p>" +
-        " <p>I will be there with you in your side whenever you seek me." +
-        " </p>" +
-        "<p>always.</p>" +
-        "<p>Enjoy your Day . Stay Blessed nd Happy . Keep Smiling :)</p>" +
+    // var thiep = document.createElement("div");
+    // thiep.innerHTML = "<div id='card'>" +
+    //     "<div id='card-inside'>" +
+    //     "<div class='wrap'>" +
+    //     "   <p>Hey,</p>" +
+    //     "  <p>“A wish for you on your birthday, whatever you ask may you receive, whatever you seek may you find, whatever you wish may it be fulfilled on your birthday and always. Happy birthday!</p>" +
+    //     " <p>I will be there with you in your side whenever you seek me." +
+    //     " </p>" +
+    //     "<p>always.</p>" +
+    //     "<p>Enjoy your Day . Stay Blessed nd Happy . Keep Smiling :)</p>" +
 
-        "<center>" +
-        "   <h4>from</h4>" +
-        "</center>" +
-        "<p class='signed'>Khurram Shahzad</p>" +
+    //     "<center>" +
+    //     "   <h4>from</h4>" +
+    //     "</center>" +
+    //     "<p class='signed'>Khurram Shahzad</p>" +
 
-        "</div>" +
-        "</div>" +
-        "<div id='card-front'>" +
-        "<div class='wrap'>" +
-        "   <h1>Happy Birthday!</h1>" +
-        "</div>" +
-        " <button id='open'>&gt;</button>" +
-        " <button id='close'>&lt;</button>" +
-        "</div>" +
-        "</div>"
+    //     "</div>" +
+    //     "</div>" +
+    //     "<div id='card-front'>" +
+    //     "<div class='wrap'>" +
+    //     "   <h1>Happy Birthday!</h1>" +
+    //     "</div>" +
+    //     " <button id='open'>&gt;</button>" +
+    //     " <button id='close'>&lt;</button>" +
+    //     "</div>" +
+    //     "</div>";
 
-    // var ifrm = document.createElement("iframe");
-    // ifrm.setAttribute("src", "https://www.youtube.com/embed/gbICivOO26U?controls=0&loop=1&autoplay=1");
-    // //ifrm.style.width = `${w}px`;
-    // //ifrm.style.height = `${h}px`;
-    // ifrm.style.border = 'none';
-    thiep.style.width = '960px';
-    thiep.style.height = '480px';
-    document.querySelector('#video').appendChild(thiep);
+
+    // thiep.style.width = '960px';
+    // thiep.style.height = '480px';
+    // document.querySelector('#card-container').appendChild(thiep);
 }
 
+// animation mo card
+function openCard() {
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    var card = $('card'),
+        openB = $('open'),
+        closeB = $('close'),
+        timer = null;
+    console.log('wat', card);
+    openB.addEventListener('click', function () {
+        card.setAttribute('class', 'open-half');
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+            card.setAttribute('class', 'open-fully');
+            timer = null;
+        }, 1000);
+    });
+
+    closeB.addEventListener('click', function () {
+        card.setAttribute('class', 'close-half');
+        if (timer) clearTimerout(timer);
+        timer = setTimeout(function () {
+            card.setAttribute('class', '');
+            timer = null;
+        }, 1000);
+    });
+
+};

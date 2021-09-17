@@ -30,13 +30,14 @@ div#beach {
     background-repeat: no-repeat;
 }
 
-div#video {
+div#card-container {
+    visibility: hidden;
     position: absolute;
     right: 243px;
     bottom: 200px;
 }
 
-div#video iframe {
+div#card-container iframe {
     width: 255px;
     height: 155px;
 }
@@ -101,7 +102,7 @@ div#sea {
     position: absolute;
     color: #fff;
     width: 100%;
-    content: "Click Me!";
+    content: "Xin Moi!";
     left: 0;
     bottom: 0;
     font-size: 24px;
@@ -468,11 +469,11 @@ div#sea {
     div#beach {
         background-size: 2000px;
     }
-    div#video {
+    div#card-container {
         right: 290px;
         bottom: 235px;
     }
-    div#video iframe {
+    div#card-container iframe {
         width: 295px;
         height: 185px;
     }
