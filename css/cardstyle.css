@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
+/* @import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic); */
+
+@import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 * {
     box-sizing: border-box;

@@ -1,7 +1,7 @@
-var a = prompt("Enter UserName");
-var b = prompt("Enter password");
-if (a == "quang" && b == "quang") {
+var a = prompt("Mã bí mật ^^");
+if (a == "ahihi") {
     window.location.href = "start.html";
+    // window.open('start.html');
 }
 else {
     alert("invalid details");
